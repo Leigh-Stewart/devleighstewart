@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+
+/* Body Code */
+
+body {
+    display: grid;
+    position: relative;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    font-family: 'Cinzel','serif';
+    font-size: 1rem;
+    grid-template-areas:
+    "header header"
+    "left-subgrid right-subgrid"
+    "footer footer";
+    grid-template-rows: 0.5fr 3fr 0.5fr;
+    grid-template-columns: 1fr 1fr;
+    background-color: #DAF4F5;
+}
+
+hr {margin:2%;}
+
+/* header code */
+
+header {
+    grid-area: header;
+    grid-column: 1 / span 2;
+    font-size: 1.2rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    color: white;
+    text-align: center;
+    padding: 10%;
+    letter-spacing: 2px;
+    background-color: #00778e;
+}
+
+h1 {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* header animations */
+
+.horz-line {
+    position: relative;
+    margin: auto;
+    background-color:white;
+    height: 3px;
+    width: 95%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    animation-name: extend;
+    animation-duration: 3s;
+}
+
+@keyframes extend {
+    0%{
+        transform:scaleX(0);
+    }
+
+    100%{
+        transform:scaleX(1);
+    }
+}
+
+/* main */
+
+main {
+    display: grid;
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 2;
+    text-align: center;
+    margin: 5%;
+    font-family: 'Montagu Slab', serif;
+}
+
+p {margin-top: 2%; letter-spacing: 1px;}
+
+
+/* left-subgrid code */
+
+#left-subgrid {
+    display: grid;
+    grid-column: 1;
+    grid-row: 2;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.cell-1, .cell-2, .cell-3 {
+    margin: 3%;
+    padding: 5%;
+    background-color: white;
+    border-bottom: solid lightgrey 5px;
+    border-right: solid lightgrey 5px;
+}
+
+h3, h4 {
+    margin-bottom: 2%;
+    font-family: 'Cinzel','serif';
+    margin: 2%;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+p { letter-spacing: 1px; font-size: 1rem;}
+
+.divider {
+    border-bottom: solid grey 3px;
+    margin: 3%;
+}
+
+
+/* right-subgrid code */
+
+#right-subgrid {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: white;
+    border-bottom: solid lightgrey 5px;
+    border-right: solid lightgrey 5px;
+    border-radius: 2%;
+    margin: 3%;
+    padding: 4%;
+    height: 60%;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+img {
+    height: 228px;
+    width: 406px;
+    margin-top: 10%;
+}
+
+
+/* footer code */
+
+footer {
+    grid-area: footer;
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #00778e;
+}
+
+#footer-name {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: 4%;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.links-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    padding-bottom: 3%;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+/* icons */
+
+.bi-dribbble:hover {
+    color: white;
+    transform: scale(1.2);
+}
+
+.bi-github:hover {
+    color: white;
+    transform: scale(1.2);
+}
+
+.bi-file-person-fill:hover {
+    color:white;
+    transform: scale(1.2);
+}
+
+a {
+    color: black;
+    letter-spacing: 2px;
+    font-family: 'Cinzel','serif';
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+/* buttons */
+button {
+    background-color: lightgrey;
+    border: none;
+    color: white;
+    padding: 16px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {background-color:grey;}
+
+
+/* responsive */
+
+@media screen and (min-width: 375px) and (max-width: 900px) {
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    img {
+        height: 114px;
+        width: 203px;
+    }
+
+}
